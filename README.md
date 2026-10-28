@@ -7,7 +7,7 @@ Workshop v rámci programu [Vybraná témata analýzy dat](https://sociology-fa-
 </p>
 
 Struktura repozitáře:
-- `JLA-SDS-filda.odp` prezentace ve formátu Open Office Impress
+- `JLA-SDS-filda.odp` prezentace ve formátu LibreOffice Impress
 - `JLA-SDS-filda.pdf` prezentace ve formátu Adobe Acrobat Reader
 - `/R/1-geocoding.R` získání dat a kreslení map / geocoding + [`{RCzechia}`](https://rczechia.jla-data.net/) package
 - `/R/2-vánoční-kapr.R` získání dat a kreslení map / staťák + [`{czso}`](https://petrbouchal.xyz/czso/) package 
