@@ -27,12 +27,12 @@ ggplot(data = chrt_src) +
 library(spdep)
 
 # pomocné objekty v rovinném CRS
-kraje_krovak <- chrt_src %>% 
+orp_krovak <- chrt_src %>% 
    st_geometry() %>% 
    st_transform(5514)
 
 # vlastní matice
-matice <- kraje_krovak %>% 
+matice <- orp_krovak %>% 
    poly2nb() %>%  # z polygonů na sousedy
    nb2listw()     # ze sousedů na matici
 
@@ -64,7 +64,7 @@ chrt_src$pvalue <- p.adjust(lisa_src[,"Pr(z != E(Ii)) Sim"], "fdr")
 chrt_src$cluster <- case_when(chrt_src$pvalue <= .05 ~ chrt_src$quadr,
                               T ~ NA)
 
-# pro připomenutí...
+# celkový přehled za ORPčka
 ggplot(data = chrt_src) +
    geom_sf(aes(fill = cluster)) +
    scale_fill_viridis_d(na.value = "gray85",
